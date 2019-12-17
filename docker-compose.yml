@@ -1,0 +1,12 @@
+version: '3'
+services:
+  beer-hai:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: docker-host-name/docker-u-name/beer-hai:latest
+    environment:
+      - BUILD_ENV=dev
+    ports:
+      - 4200:4200
+    # command: /bin/bash -c "sleep 7 && python3 app.py"
