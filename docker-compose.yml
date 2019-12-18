@@ -1,10 +1,10 @@
 version: '3'
 services:
-  beer-hai:
+  beer:
     build:
       context: .
       dockerfile: Dockerfile
-    image: docker-host-name/docker-u-name/beer-hai:latest
+    image: veddev/beer:latest
     environment:
       - BUILD_ENV=dev
     ports:

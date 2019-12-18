@@ -1,9 +1,9 @@
 FROM python:3.7-slim
 
 # Installing requirements
-ADD requirements-serving.txt /usr/src/app/
+ADD serving-requirements.txt /usr/src/app/
 WORKDIR /usr/src/app
-RUN pip3 install -r requirements-serving.txt
+RUN pip3 install -r serving-requirements.txt
 
 # Adding remaining files
 # ADD . /usr/src/app
