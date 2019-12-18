@@ -1,0 +1,9 @@
+# keras
+# tensorflow
+# pillow
+flask
+tensorflow==1.14
+keras==2.2.4
+pillow
+
+

@@ -1,4 +1,4 @@
-from src.training import config
+from src import config
 
 import os
 
@@ -9,13 +9,13 @@ from keras.layers import Activation, Dropout, Flatten, Dense
 from keras import backend as K
 
 if __name__ == "__main__":
-    print("Starting training using dataset_path->", config.dataset_path)
+    print("Starting training using train_data_dir->", config.train_data_dir)
 
-    train_data_dir = os.path.join(config.dataset_path, 'beer', 'train')
-    validation_data_dir = os.path.join(config.dataset_path, 'beer', 'validation')
+    train_data_dir = config.train_data_dir
+    validation_data_dir = config.validation_data_dir
     nb_train_samples = 2000
     nb_validation_samples = 400 #800
-    epochs = 50 # TODO: make it 50
+    epochs = config.epochs
     batch_size = 16
 
     if K.image_data_format() == 'channels_first':
@@ -78,4 +78,4 @@ if __name__ == "__main__":
         validation_steps=nb_validation_samples // batch_size)
 
     # model.save_weights(os.path.join(config.dataset_path, 'exp_2', 'trained_weight', 'first_try.h5'))
-    model.save(os.path.join(config.dataset_path, 'beer', 'trained_model', 'beer_vs_catndog.h5'))
+    model.save(config.trained_model_file)

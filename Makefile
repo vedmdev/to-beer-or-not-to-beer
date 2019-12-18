@@ -18,6 +18,9 @@ test:
 run_prediction_on_file:
 	python3 ./src/prediction/run_prediction_on_file.py
 
+serve:
+	python3 ./src/serving/server.py
+
 package:
 	echo "to create a docker build/ python package/code artefacts"
 	docker-compose -f ./docker-compose.yml build

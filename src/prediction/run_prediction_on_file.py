@@ -1,13 +1,17 @@
 import os
 
-from src.training import config
+from src import config
 from src.prediction.predict import Predictor
+from PIL import Image
 
 if __name__ == "__main__":
     # test_validation
 
-    test_img_path = os.path.join(config.dataset_path, 'beer', 'test_validation', 'cat.1007.jpg')
+    test_img_path = config.test_img_dir_file
 
     print("test_img_path->", test_img_path)
     predictor = Predictor()
-    predictor.predict_from_file(test_img_path)
+    image = Image.open(test_img_path)
+    image = predictor.prepare_image(image)
+
+    predictor.predict(image)
