@@ -15,6 +15,9 @@ train:
 test:
 	echo "testing"
 
+run_prediction_on_file:
+	python3 ./src/prediction/run_prediction_on_file.py
+
 package:
 	echo "to create a docker build/ python package/code artefacts"
 	docker-compose -f ./docker-compose.yml build
@@ -28,3 +31,24 @@ run_package:
 
 deploy:
 	echo "deploying"
+
+
+
+#######
+train_exp_1:
+	python3 ./src/training/train_exp_1.py
+
+train_exp_2:
+	python3 ./src/training/train_exp_2.py
+
+run_prediction_on_file_exp_2:
+	python3 ./src/prediction/run_prediction_on_file_exp_2.py
+
+train_exp_3:
+	python3 ./src/training/train_exp_3.py
+
+run_prediction_on_file_exp_3:
+	python3 ./src/prediction/run_prediction_on_file_exp_3.py
+
+download_images_from_google:
+	python3 ./scripts/scrapers/google/image_download.py
