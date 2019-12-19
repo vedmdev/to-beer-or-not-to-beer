@@ -5,8 +5,8 @@ create_env:
 activate_env:
 	source ./venv/bin/activate
 
-install:
-	pip3 install -r ./requirements.txt
+install_training_requirements:
+	pip3 install -r ./training-requirements.txt
 
 train:
 	echo "training"
@@ -35,6 +35,11 @@ run_package:
 deploy:
 	echo "deploying"
 
+ready_k8s:
+	kubectl create namespace beer
+
+deploy_k8s:
+	kubectl -n beer apply -f k8s.yml
 
 
 #######
@@ -54,4 +59,4 @@ run_prediction_on_file_exp_3:
 	python3 ./src/prediction/run_prediction_on_file_exp_3.py
 
 download_images_from_google:
-	python3 ./scripts/scrapers/google/image_download.py
+	python3 ./scripts/scrapers/google/image_downloader.py
