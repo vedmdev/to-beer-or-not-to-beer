@@ -2,5 +2,5 @@
 numpy==1.17.4
 tensorflow==1.14
 keras==2.2.4
-Pillow==6.2.1
+Pillow==8.1.1
 google-images-download==2.8.0
